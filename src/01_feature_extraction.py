@@ -536,9 +536,9 @@ def process_dataset_to_csv(input_dir, output_csv, bins=8, distance=1):
 if __name__ == "__main__":
     # Define paths
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    raw_train_dir = os.path.join(base_dir, '..', 'data', 'raw', 'Training')
-    raw_test_dir = os.path.join(base_dir, '..', 'data', 'raw', 'Test')
-    features_dir = os.path.join(base_dir, '..', 'data', 'features')
+    raw_train_dir = os.path.join(base_dir, '..', 'data', 'augmented', 'Training')
+    raw_test_dir = os.path.join(base_dir, '..', 'data', 'augmented', 'Test')
+    features_dir = os.path.join(base_dir, '..', 'data','augmented' ,'features')
     
     # Create features directory if it doesn't exist
     os.makedirs(features_dir, exist_ok=True)
@@ -598,7 +598,7 @@ if __name__ == "__main__":
         
     elif choice == '4':
         # Visualize single image
-        apple_img_path = os.path.join(raw_train_dir, 'Apple 5', 'r0_100_100.jpg')
+        apple_img_path = os.path.join(raw_train_dir, 'Apple Red 1', '12_100_gaussian_noise.jpg')
         
         if os.path.exists(apple_img_path):
             print("\nVisualizing features for an apple image...")

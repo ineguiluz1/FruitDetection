@@ -4,8 +4,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 data_train_bruised_path = 'data/features/bruised/train_features.csv'
 data_test_bruised_path = 'data/features/bruised/test_features.csv'
 
-data_train_processed_bruised_path = 'data/features/processed/train_data_processed.csv'
-data_test_processed_bruised_path = 'data/features/processed/test_data_processed.csv'
+data_train_processed_bruised_path = 'data/features/processed_bruised/train_data_processed.csv'
+data_test_processed_bruised_path = 'data/features/processed_bruised/test_data_processed.csv'
 
 train_data = pd.read_csv(data_train_bruised_path)
 test_data = pd.read_csv(data_test_bruised_path)

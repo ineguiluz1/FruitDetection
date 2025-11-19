@@ -4,6 +4,8 @@ from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.metrics import accuracy_score, classification_report
 import numpy as np
 import matplotlib.pyplot as plt
+import joblib
+import os
 
 train_path = 'data/features/processed/train_data_processed.csv'
 test_path = 'data/features/processed/test_data_processed.csv'
@@ -32,3 +34,15 @@ test_accuracy = accuracy_score(y_test, y_pred)
 print(f"\nTest accuracy: {test_accuracy:.4f}")
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred, target_names=train_data['label'].unique()))
+
+# Save the model
+os.makedirs('src/models', exist_ok=True)
+model_path = 'src/models/random_forest_classifier.pkl'
+joblib.dump(rf, model_path)
+print(f"\nModel saved to {model_path}")
+
+# Also save label mappings for future predictions
+label_mapping = dict(zip(train_data['label_encoded'], train_data['label']))
+mapping_path = 'src/models/label_mapping.pkl'
+joblib.dump(label_mapping, mapping_path)
+print(f"Label mapping saved to {mapping_path}")

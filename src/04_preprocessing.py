@@ -34,7 +34,7 @@ def save_processed_data(train_df, test_df, train_path, test_path):
 
 def balance_dataset(train_df, label_col='label'):
     median_samples = int(train_df[label_col].value_counts().median())
-    balanced_df = train_df.groupby(label_col).apply(
+    balanced_df = train_df.groupby(label_col, group_keys=False).apply(
         lambda x: x.sample(min(len(x), median_samples), random_state=42)
     ).reset_index(drop=True)
     return balanced_df
