@@ -2,12 +2,11 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import KFold
 
-train_data_path = 'data/features/raw/train_data.csv'
-test_data_path = 'data/features/raw/test_data.csv'
+train_data_path = 'data/augmented/features/raw/train_features.csv'
+test_data_path = 'data/augmented/features/raw/test_features.csv'
 
-train_processed_path = 'data/features/processed/train_data_processed.csv'
-test_processed_path = 'data/features/processed/test_data_processed.csv'
-
+train_processed_path = 'data/augmented/features/processed/train_features_processed.csv'
+test_processed_path = 'data/augmented/features/processed/test_features_processed.csv'
 train_data = pd.read_csv(train_data_path)
 test_data = pd.read_csv(test_data_path)
 

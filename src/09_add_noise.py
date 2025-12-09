@@ -83,10 +83,7 @@ def process_directory(input_dir, output_dir, augmentations):
             img = cv2.imread(str(img_path))
             if img is None:
                 continue
-            
-            # Save original
-            original_name = img_path.stem + img_path.suffix
-            cv2.imwrite(str(output_subdir / original_name), img)
+        
             
             # Apply ONE random augmentation per image
             aug_name = random.choice(augmentations)
